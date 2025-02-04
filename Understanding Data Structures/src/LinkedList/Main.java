@@ -14,7 +14,12 @@ public class Main {
        System.out.println();
        myLinkedList.removeLast();
        myLinkedList.printList();
-
+        System.out.println();
+       myLinkedList.prepend(0);
+        myLinkedList.append(2);
+        myLinkedList.printList();
+        System.out.println();
+       System.out.println(myLinkedList.get(1).value);
 
         /*
             EXPECTED OUTPUT:

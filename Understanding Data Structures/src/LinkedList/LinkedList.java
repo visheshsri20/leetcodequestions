@@ -70,4 +70,32 @@ public class LinkedList
         }
         return temp;
     }
+
+    public void prepend(int value)
+    {
+        Node newNode = new Node(value);
+        if(length == 0) {
+            head = newNode;
+            tail = newNode;
+
+        }
+        else{
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+    public Node get(int index)
+    {
+        if(index<0||index>=length)
+        {
+            return  null;
+        }
+        Node temp=head;
+        for(int i =0;i<index;i++)
+        {
+            temp=temp.next;
+        }
+        return temp;
+    }
 }
