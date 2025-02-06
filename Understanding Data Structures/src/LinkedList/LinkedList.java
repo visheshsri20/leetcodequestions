@@ -70,7 +70,7 @@ public class LinkedList
         }
         return temp;
     }
-
+//Method to prepend or add a node in the first index
     public void prepend(int value)
     {
         Node newNode = new Node(value);
@@ -85,6 +85,7 @@ public class LinkedList
         }
         length++;
     }
+    //Method to get a node
     public Node get(int index)
     {
         if(index<0||index>=length)
@@ -97,5 +98,32 @@ public class LinkedList
             temp=temp.next;
         }
         return temp;
+    }
+    //Method to set a node
+    public boolean set (int index,int value)
+    {
+        Node temp = get(index);
+        if(temp!=null)
+        {
+            temp.value=value;
+            return true;
+        }
+        return false;
+    }
+
+    public void reverse()
+    {
+        Node temp =head ;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        for(int i =0;i<length;i++)
+        {
+            after=temp.next;
+            temp.next=before;
+            before=temp;
+            temp=after;
+        }
     }
 }
